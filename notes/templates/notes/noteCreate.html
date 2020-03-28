@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item ">
-              <a class="nav-link" href="#">Create</a>
+              <a class="nav-link" href="{% url 'notes:notecreate' %}">Create</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'notes:notelist' %}">View</a>
@@ -31,17 +31,10 @@
       </nav>
       
     <div class="m-5">
-       <form action = "{% url 'notes:notelist' %}" method="post"> 
+       <form action = "{% url 'notes:notecreate' %}" method="POST"> 
        {% csrf_token %}
-            <div class = "form-group">
-                <label for="notetitle">Note Title:</label>
-                <input type="text" class="form-control" id="notetitle" value="{{notetitle}}" required>
-            </div>
-            <div class="form-group">
-                <label for="notecontext">Note Context:</label>
-                <textarea class="form-control" id="notecontext" rows="4" value="{{notecontext}}" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary mb-2" value="Create">Create</button>
+          {{form}}
+            <button type="submit" class="btn btn-primary mb-2" >Create</button>
        </form>
 
     </div>
