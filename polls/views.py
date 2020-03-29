@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, get_object_or_404
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.template import loader
@@ -40,4 +41,4 @@ def vote(request,question_id):
         selected_choice.votes += 1
         selected_choice.save()
         # ALWAYS return HTTPRESPONSEREDIRECT after POST data. Prevent twice submission
-        return HttpResponseRedirect(reverse('polls:results',args=(question.id,)))
+        return HttpResponseRedirect(reverse('polls:results',args=(question.id)))

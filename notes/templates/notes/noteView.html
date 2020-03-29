@@ -31,14 +31,16 @@
       </nav>
       
     <div class="m-5">
+    <form action = "{% url 'notes:noteupdate' note.id %}" method="POST">
+    {% csrf_token %}
         <h2> {{ note.note_title }} </h2>
         <p class="font-italic font-weight-lighter"> Created on: {{note.creation_date}}</p>
    
        
-            <textarea class="form-control" id ="NoteContext" rows="5">{{note.context}}</textarea>
+            <textarea class="form-control" name="NoteContext" id="NoteContext" rows="5">{{note.context}}</textarea>
             <p class="font-italic font-weight-lighter"> Last modified on: {{note.modify_date}}</p>
-       
-
+          <button type="submit" class="btn btn-info">Update</button>
+      </form >
 
     </div>
 
