@@ -36,3 +36,10 @@ def NoteUpdate(request,note_id):
         note.save()
         return HttpResponseRedirect(reverse('notes:noteview', args=(note.id,)))
         
+def NoteDelete(request,note_id):
+    note  =  get_object_or_404(Note,pk=note_id)
+
+    if request.method == 'POST':
+        note.delete()
+        return HttpResponseRedirect(reverse('notes:notelist'))
+

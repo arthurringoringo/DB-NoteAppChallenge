@@ -40,8 +40,13 @@
             <textarea class="form-control" name="NoteContext" id="NoteContext" rows="5">{{note.context}}</textarea>
             <p class="font-italic font-weight-lighter"> Last modified on: {{note.modify_date}}</p>
           <button type="submit" class="btn btn-info">Update</button>
-      </form >
-
+      </form>
+  
+      <form action = "{% url 'notes:notedelete' note.id %}" method="POST">
+          {% csrf_token %}
+           <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+   
     </div>
 
 </body>

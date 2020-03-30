@@ -42,3 +42,4 @@ def vote(request,question_id):
         selected_choice.save()
         # ALWAYS return HTTPRESPONSEREDIRECT after POST data. Prevent twice submission
         return HttpResponseRedirect(reverse('polls:results',args=(question.id)))
+
