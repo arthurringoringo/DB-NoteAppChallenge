@@ -13,7 +13,7 @@ class NoteList(generic.ListView):
     model = Note
 
 class NoteView(generic.DetailView):
-    template_name = 'notes/noteview.html'
+    template_name = 'notes/noteView.html'
     model = Note
 
 def NoteCreate(request,template_name='notes/noteCreate.html'): 
