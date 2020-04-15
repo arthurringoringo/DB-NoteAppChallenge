@@ -11,14 +11,24 @@ class NoteList(generic.ListView):
     template_name = 'notes/notes.html'
     context_object_name = 'NoteList'
     model = Note
+    '''
+    Return Notes order by ID
+    '''
+    def get_queryset(self):
+        return Note.objects.order_by('id')
 
 class NoteView(generic.DetailView):
     template_name = 'notes/noteView.html'
     model = Note
+    '''
+    Return Notes order by ID
+    '''
+    def get_queryset(self):
+        return Note.objects.order_by('id')
 
 def NoteCreate(request,template_name='notes/noteCreate.html'): 
     form = CreateForm()
-    
+
     if request.method == 'POST':
         form = CreateForm(request.POST)
         if form.is_valid():
