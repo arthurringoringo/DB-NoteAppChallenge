@@ -1,0 +1,21 @@
+.list-group .list-group-item {
+    background-color: #01f3f3;
+  }
+  
+.list-group .list-group-item:hover {
+    background-color: #dbf301;
+  }
+
+body {
+
+   background:white url("images/aiulogo.png") no-repeat;
+   background-size:100% 200%;
+
+
+
+}
+
+.font-italic {
+    color: red;
+ 
+}
